@@ -1,0 +1,56 @@
+.item{
+    // outline: 1px solid gray;
+    overflow-x: hidden;
+    max-width: 100%;
+    width:300px;
+    margin-bottom: 1rem;
+    position: relative;
+
+    background-color: #fff;
+//    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0.0625rem 0.125rem 0px;
+    transition: transform .2s ease-in-out;
+
+& .item-overlay{
+    width:100%;
+    height: 100%;
+    background: rgba(0,0,0,0.1);
+    transform: translateX(300px);
+    transition: all .3s ease-out;
+    position: absolute;
+
+    
+}
+
+&:hover {
+    .item-overlay{
+        transform: translateX(3px);
+    }
+}
+
+& img{
+    max-width:100%;
+    width: 99%;
+    object-fit: scale-down;
+    height: 150px;
+}
+
+& .item-details{
+    // margin-top: 2rem;
+    padding: 2rem 1rem;
+    .item-name{
+        font-size: 14px;
+        font-weight: 200;
+        color: #000000de;
+    }
+    .full-price{
+        color: #ee4d2d;
+        font-weight: 200;
+    }
+}
+
+
+
+
+  
+}
