@@ -3,11 +3,11 @@ import './item.scss';
 
 
 
-const Item = ({item}) => {
+const Item = ({item,onAdd}) => {
   return (
     <div  className='item' >
         <div className="item-overlay">
-            <button onClick={()=>{console.log(`${item.name} added to the cart`)}}>Add to Cart</button>
+            <button onClick={()=>{onAdd(item)}}>Add to Cart</button>
         </div>
 
         <div className="photo">

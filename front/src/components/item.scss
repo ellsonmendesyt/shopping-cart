@@ -14,17 +14,42 @@
 & .item-overlay{
     width:100%;
     height: 100%;
-    background: rgba(0,0,0,0.1);
-    transform: translateX(300px);
+    background: rgba(0,0,0,0.2);
+    transform: translateX(295px);
     transition: all .3s ease-out;
     position: absolute;
+
+    display: grid;
+    place-items: center;
+
+    & button{
+        margin-top: 4rem;
+        font-size: 0.8rem;
+        padding: .6rem 1.4rem;
+
+        color:  #f69113;
+        font-weight:bold;
+        font-family: inherit;
+        border-radius: 10px;
+        border: 1.9px solid transparent;
+        background: #fff;
+        transition: background .2s ease-out;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 0.0625rem 0.125rem 0px;
+        cursor: pointer;
+
+
+        &:hover{
+            background: #f69113;
+            color: #fff;
+        }
+    }
 
     
 }
 
 &:hover {
     .item-overlay{
-        transform: translateX(3px);
+        transform: translateX(0px);
     }
 }
 
