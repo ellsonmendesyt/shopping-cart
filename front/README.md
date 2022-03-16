@@ -1,70 +1,52 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+## `COMO INICAR O PROJETO`
+#
+## Clone o projeto 
+O projeto contem uma pasta pro front end
+chamada `front` e uma pro back chamada `api`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Rode primeiro o servidor
+#
+ Entre na pasta `api` e execute o comando
+ `yarn install` para instalar as depdendencias
+ e depois o comando `yarn run serve`
+ pra subir o servidor
+ 
+### Agora o front end
+#
+Entre na pasta `front` instale as dependencias usando
+`yarn install` após isso, rode o comando `yarn start`
+e estará tudo preparado :)
 
-### `npm test`
+### OBS 
+#
+Como corria o risto dos links da api cairem montei um pequeno servidor pra garantir a estabilidade
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Ainda está previsto escrever os testes
+e contêinerizar, assim ficaria mais automatizado
+a inicialização dos dos microserviços usando o `docker-compose` ou `kubernetes`
 
-### `npm run build`
+### Funcionamento do Carrinho
+#
+Na parte principal do site temos a listagem.
+Ao passar o mouse sobre um dos produtos um cortina 
+revelará o botão de adicionar ao carrinho
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src='public/home.gif' width="700" >
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Há possibilidade de adicionar mais de um item ao carrinho, caso adicione mais de um alterará somente
+o indicador de quantidade de item 
 
-### `npm run eject`
+O usuario poderá remover seu itens do carrinho
+se tiver mais de um item igual ao clicar em remover 
+decrementará somente a quantidade, havendo apenas um item no carrinho ele será removido
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<img src='public/cart.gif' width="700" >
+O carrinho `enxergará` todos os itens e seus respectivos indicadores de unidades e fará o somatorio de todos os itens assim como atualizará de forma automatica caso seja removido algum item
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Eita readme grande hein      :)
