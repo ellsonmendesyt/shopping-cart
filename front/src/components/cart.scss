@@ -1,0 +1,132 @@
+.shopping-cart{
+    max-width: 600px;
+    width:80%;
+    // height: 90vh;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0.0625rem 0.125rem 0px;
+    margin: 10vh  auto;
+
+    border-radius: 18px;
+
+    & .cart-header{
+        padding: 1rem;
+        border-bottom: 1px solid #e3e3e3;
+        
+        & .cart-title{
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bolder;
+
+
+        }
+    }
+
+    & .cart-body{
+        padding: 1.2rem;
+    }
+
+    & .cart-item{
+        display: flex;
+        margin-bottom: 2rem;
+    }
+
+    & .cart-image-wrapper{
+        width:150px;
+        height: 150px;
+        outline: 1px solid darkgray;
+        display: grid;
+        place-items: center;
+        padding: .1rem;
+        margin-right: 1rem;
+
+        & img{
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+    }
+
+    & .cart-details{
+        // outline: 1px solid orange;
+        // color:blue;
+        margin-left: 1rem;
+        margin-bottom: 0;
+        flex: 1;
+        margin-right: 1rem;
+
+        & .selling-price{
+            color: rgba(0,0,0,.54);
+            line-height: 1.4rem;
+            font-size: .9rem;
+        }
+    }
+     
+
+    & .remove-btn{
+        align-self: flex-end;
+        padding: .3rem 1rem;
+        // background-color: red;
+        border: 1px solid rgba(0,0,0,.65);
+        color: crimson;
+        font-weight: bold;
+        border-radius: 5px;
+
+        &:hover{
+            border: 1px solid crimson;
+            background-color: transparent;
+            color: crimson;
+        }
+    }
+
+   & .cart-footer{
+       padding: 2rem ;
+       border-top: 1px solid darkgray;
+       
+
+
+       & .cart-sum{
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+
+           & .total{
+               font-size: 1.4rem;
+           }
+       }
+
+
+       .free-shipping-tag{
+           padding: .5rem 1rem;
+           border-radius: 8px;
+           width: 100%;
+           color: green;
+         background-color: rgba(9, 240, 9,.3);
+         font-size: 1rem;
+         text-align: center;
+       }
+   }
+
+
+   & .complete-purchase{
+       padding: 2rem 1rem;
+
+       .checkout-btn{
+           width: 100%;
+           padding: 7px;
+           background-color:#1876f2;
+           border: none;
+           border-radius: 5px;
+           color: #fff;
+           font-weight: bolder;
+           letter-spacing: 2px;
+           line-height: 1.5rem;
+           transition:  background-color .2s ease-in;
+           &:hover{
+               background-color: #1166d4;
+           }
+       }
+   }
+
+
+}
+

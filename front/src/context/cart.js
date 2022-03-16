@@ -29,16 +29,16 @@ const reducer=(state,action)=>{
    case "REMOVE":
       
     let f = state.find(x => x.id ===action.payload.item.id)
-   console.log(f)
+  
     if(f && f.qty>1){
 
         const tempState= [...state]
         let n=tempState.filter(x => x.id !== f.id)
         return [...n,{...action.payload.item,qty:f.qty-1}]
+   
        
      }else{
-        //  const f= state.find(x=> x.id ===action.item.id);
-        // const newState = state.filter(x => x.id != action.item.id);
+     
         let newCartState= state.filter(x => x.id !== action.payload.item.id)
         return [...newCartState]
     }
