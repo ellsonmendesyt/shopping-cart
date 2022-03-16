@@ -1,13 +1,25 @@
 import React from 'react'
 import './item.scss';
+import { useDispatchCart,useCart } from '../context/cart';
 
 
+const Item = ({item}) => {
 
-const Item = ({item,onAdd}) => {
+ const dispatch = useDispatchCart();
+//  const items = useCart(); 
+
+  
+
+const addToCart=(item)=>{
+
+  dispatch({type:"ADD", item});
+}
+
+
   return (
     <div  className='item' >
         <div className="item-overlay">
-            <button onClick={()=>{onAdd(item)}}>Add to Cart</button>
+            <button onClick={()=>addToCart(item)}>Add to Cart</button>
         </div>
 
         <div className="photo">

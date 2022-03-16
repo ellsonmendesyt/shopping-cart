@@ -8,9 +8,51 @@ const CartDispatchContext = createContext();
 export const useCart =()=>useContext(CartContext);
 export const useDispatchCart = ()=>useContext(CartDispatchContext)
 
+const state=[]
+
+
+
 const reducer=(state,action)=>{
   switch(action.type){
-      default: throw new Error(`unkown action: ${action.type}`);
+   case "ADD":
+       const found= state.find(x=> x.id ===action.item.id);
+       if(!found){
+           return [...state,{...action.item,qty:1}]
+          
+        }else{
+            const found= state.find(x=> x.id ===action.item.id);
+           const newState = state.filter(x => x.id != action.item.id);
+           return [...newState, {...found,qty:found.qty+1}]
+       }
+
+
+   case "REMOVE":
+      
+    let f = state.find(x => x.id ===action.payload.item.id)
+   console.log(f)
+    if(f && f.qty>1){
+
+        const tempState= [...state]
+        let n=tempState.filter(x => x.id !== f.id)
+        return [...n,{...action.payload.item,qty:f.qty-1}]
+       
+     }else{
+        //  const f= state.find(x=> x.id ===action.item.id);
+        // const newState = state.filter(x => x.id != action.item.id);
+        let newCartState= state.filter(x => x.id !== action.payload.item.id)
+        return [...newCartState]
+    }
+
+
+   
+       
+      
+
+
+   
+    // padrao
+    default: return state;
+   
 
   }
 }

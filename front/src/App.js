@@ -11,29 +11,23 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Notfound from './components/Notfound';
 
 
+
+import Cart from './components/Cart';
+
+import { useCart } from './context/cart';
 
 function App() {
 
   const [products,setProducts]=useState([])
-  const [cartItems, setCartItems]=useState([]);
 
-const addToCart= (product)=>{
-  const found= cartItems.find(item=> item.id ===product.id);
-  if(found){
-   setCartItems(
-     cartItems.map((x)=> x.id ===product.id ? {...found,qty: found.qty+1}: x)
-   )
-  }else{
-    setCartItems([...cartItems, {...product,qty:1}])
-  }
-}
+  const cartItems= useCart();
 
+const baseUrl="http://localhost:4000/items";
 
   useEffect(()=>{
-    axios.get("http://localhost:4000/items")
+    axios.get(baseUrl)
       .then((response) => setProducts(response.data))
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
@@ -41,20 +35,17 @@ const addToCart= (product)=>{
 
   },[])
 
- if(products.length>0){
-   console.log(products)
- }
+
 
   return (
     <Router>
-    <div className="app">
-     <Header onAdd={addToCart} cartItems={cartItems} />
-      <Routes>
-    {/*  */}
-    <Route path="/" element={<List onAdd={addToCart} items={products} />} />
-    <Route path='/shopping-cart' element={<Notfound/>}/>
-    </Routes>
-    </div>
+      <div className="app">
+        <Header  cartItems={cartItems} />
+          <Routes>
+            <Route path="/" element={<List  items={products} />} />
+            <Route path='/shopping-cart' element={<Cart/>}/>
+        </Routes>
+      </div>
     </Router>
   );
 }
