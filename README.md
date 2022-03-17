@@ -36,7 +36,7 @@ Na parte principal do site temos a listagem.
 Ao passar o mouse sobre um dos produtos um cortina 
 revelará o botão de adicionar ao carrinho
 
-<img src='front/public/home.gif' width="700" >
+<img src='front/public/home2.gif' width="700" >
 
 
 Há possibilidade de adicionar mais de um item ao carrinho, caso adicione mais de um alterará somente
@@ -46,7 +46,7 @@ O usuario poderá remover seu itens do carrinho
 se tiver mais de um item igual ao clicar em remover 
 decrementará somente a quantidade, havendo apenas um item no carrinho ele será removido
 
-<img src='./front/public/images/cart.gif' width="700" >
+<img src='./front/public/images/cart2.gif' width="700" >
 O carrinho `enxergará` todos os itens e seus respectivos indicadores de unidades e fará o somatorio de todos os itens assim como atualizará de forma automatica caso seja removido algum item
 
 ### Eita readme grande hein      :)
