@@ -1,0 +1,17 @@
+.promo{
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // padding: .4rem 3rem;
+
+
+    & .free-shipping{
+        
+        font-weight:bolder;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        color: #fff;
+        margin-left: 1rem;
+    }
+}

@@ -8,6 +8,10 @@ const Item = ({item}) => {
  const dispatch = useDispatchCart();
 //  const items = useCart(); 
 
+// show ribbon if the item is on promotion, it can come from the api or via prop
+//for how is hard coded  
+
+
   
 
 const addToCart=(item)=>{
@@ -21,6 +25,7 @@ const addToCart=(item)=>{
         <div className="item-overlay">
             <button onClick={()=>addToCart(item)}>Add to Cart</button>
         </div>
+        <span className="promo-ribbon"></span>
 
         <div className="photo">
            <img src={item.imageUrl} alt='imagem do produto'  width='110'/>

@@ -1,5 +1,7 @@
+$bgcolor : #5a2d82;
+
 header{
-    background: #fa5030;
+    background: $bgcolor;
     // background: #1876f2;
     // padding: 1rem;
     display: flex;
@@ -12,5 +14,14 @@ header{
         
             font-size: 1.3rem;
         
+    }
+
+    & .cart-qty{
+        color: #000;
+        font-size: .7rem;
+        padding: 0px 4px;
+        background-color: #FFA500;
+        border-radius: 50%;
+        // font-weight: bold;
     }
 }

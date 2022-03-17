@@ -52,7 +52,7 @@
         
         
         &:hover{
-            border: 1px solid   #f69113;
+            // border: 1px solid   #f69113;
             background: #ee4d2d;
         }
     }
@@ -90,7 +90,35 @@
 
 // promotional ribbon
 
+& .promo-ribbon{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    // padding: 13px;
+    top: -10px;
+    left: -10px;
+    // background-color: crimson;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
 
+    &::before{
+        content: 'Promoção';
+        width: 150%;
+        height: 40px;
+        background: #62baea;
+        position: absolute;
+        text-align: center;
+        color: #fff;
+        font-weight:600;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+        display: grid;
+        place-items: center;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        transform: rotate(-45deg) translateY(-20px);
+    }
+}
 
 
   

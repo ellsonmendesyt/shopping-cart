@@ -17,6 +17,7 @@ import {
 import Cart from './components/Cart';
 
 import { useCart } from './context/cart';
+import Promo from './components/Promo';
 
 function App() {
 
@@ -41,6 +42,7 @@ const baseUrl="http://localhost:4000/items";
     <Router>
       <div className="app">
         <Header  cartItems={cartItems} />
+        <Promo minPrice='10'/>
           <Routes>
             <Route path="/" element={<List  items={products} />} />
             <Route path='/shopping-cart' element={<Cart/>}/>
