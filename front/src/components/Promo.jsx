@@ -4,7 +4,7 @@ import './promo.scss';
 
 const Promo = ({minPrice}) => {
 
-    console.log(minPrice)
+    // console.log(minPrice)
     const price=minPrice;
   return (
     <div className='promo'>

@@ -8,7 +8,7 @@ const CartDispatchContext = createContext();
 export const useCart =()=>useContext(CartContext);
 export const useDispatchCart = ()=>useContext(CartDispatchContext)
 
-const state=[]
+
 
 
 
@@ -21,27 +21,28 @@ const reducer=(state,action)=>{
           
         }else{
             const found= state.find(x=> x.id ===action.item.id);
-           const newState = state.filter(x => x.id != action.item.id);
+           const newState = state.filter(x => x.id !== action.item.id);
            return [...newState, {...found,qty:found.qty+1}]
        }
 
 
    case "REMOVE":
-      
-    let f = state.find(x => x.id ===action.payload.item.id)
-  
-    if(f && f.qty>1){
+    //===================================================
+    let remItem = state.find(x => x.id ===action.payload.item.id)
+    if(remItem && remItem.qty>1){
 
         const tempState= [...state]
-        let n=tempState.filter(x => x.id !== f.id)
-        return [...n,{...action.payload.item,qty:f.qty-1}]
-   
-       
+        let pos = tempState.findIndex(x=>x.id===remItem.id);
+        let updatedItem = {...remItem,qty:remItem.qty-1}
+        let newSt=tempState.filter(x => x.id !== remItem.id)
+        
+        newSt.splice(pos,0,updatedItem)
+        return[...newSt]
      }else{
-     
         let newCartState= state.filter(x => x.id !== action.payload.item.id)
         return [...newCartState]
     }
+
 
 
    
