@@ -25,7 +25,6 @@ const reducer=(state,action)=>{
            return [...newState, {...found,qty:found.qty+1}]
        }
 
-
    case "REMOVE":
     //===================================================
     let remItem = state.find(x => x.id ===action.payload.item.id)
